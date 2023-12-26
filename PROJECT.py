@@ -17,8 +17,8 @@ class PROJECT:
         "bits", "bit user", "bit work", "bits manipulate",
     ]
 
-    DESCRIPTION_SHORT: str = "work with bits (_field_data/flags/...)"
-    DESCRIPTION_LONG: str = "designed for common work with _field_data-like objects"
+    DESCRIPTION_SHORT: str = "work with bits (bitfields/flags/bites...)"
+    DESCRIPTION_LONG: str = "designed for common work with bitfields-like objects"
     FEATURES: List[str] = [
         "Flags",
         "Bits",
