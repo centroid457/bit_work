@@ -1,15 +1,11 @@
-# prj_name
-Descr short (git/prg descr).  
-Designed for ....  
+# bit_work
+Work with bits (bitfields/flags/...).  
+Designed for common work with bitfield-like objects.  
 
 
 ## Features
-1. feat1  
-2. feat2  
-3. feat3:  
-	- block1  
-	- block2  
-4. feat4  
+1. Flags  
+2. Bits  
 
 
 ********************************************************************************
@@ -23,13 +19,13 @@ See the [HISTORY.md](HISTORY.md) file for release history.
 
 ## Installation
 ```commandline
-pip install prj-name
+pip install bit-work
 ```
 
 
 ## Import
 ```python
-from prj_name import *
+from bit_work import *
 ```
 
 
@@ -39,23 +35,18 @@ See tests and sourcecode for other examples.
 
 ******************************
 ### 1. example1.py
-
 ```python
 from bit_work import *
 
+
 # =====================================================================================================================
 if __name__ == "__main__":
-	NEW_CLASS____()
+    Flags()
+
 
 # =====================================================================================================================
 
-print(NEW_CLASS____())
-```
-
-******************************
-### 2. example2.py
-```python
-
+print(Flags())
 ```
 
 ********************************************************************************
