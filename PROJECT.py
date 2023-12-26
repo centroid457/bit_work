@@ -12,7 +12,7 @@ class PROJECT:
     NAME_INSTALL: str = "bit-work"
     NAME_IMPORT: str = "bit_work"
     KEYWORDS: List[str] = [
-        "_field_data",
+        "_field_bytearray",
         "flags", "flags manipulate",
         "bits", "bit user", "bit work", "bits manipulate",
     ]

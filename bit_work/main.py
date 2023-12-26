@@ -17,39 +17,52 @@ class Exx_BitsOutOfRange(Exception):
 # =====================================================================================================================
 class Bitfield:
     """
-    # ORDER for any field is NO HUMAN!!! or not???
+    IMPORTANT: ORDER for any field is NO HUMAN!!! or not???
     YOU NEED TO SEE ALWAYS AS REVERCE IN ANY REPRESENTATION!!!
     but when you indexind by obj[] used human order!!!
     """
     field_size: int = None
-    _field_data: bytearray = None
+    _field_bytearray: bytearray = None
 
     def __init__(self, field_size: int):
         if field_size < 1:
             raise Exx_BitsNoSize
 
         self.field_size = field_size
-        self._field_data = bytearray((field_size + 7) // 8)
+        self._field_bytearray = bytearray((field_size + 7) // 8)
 
     # todo: clear_all+exact+several/setup_all+exact+several/ [by_pos/by_fields]
     # todo: listActiveFlags/list+iter [by_pos/by_fields]
 
+    @classmethod
+    def create_from_int(cls, flags: int, field_size: Optional[int] = None) -> 'Bitfield':
+        pass
+
+    def size_get_active(self) -> int:
+        """get position of major valued flag
+        """
+        result = 0
+        for pos, value in enumerate(self.list()[::-1], start=1):
+            if value == 1:
+                result = pos
+        return result
+
     @property
     def field_str(self) -> str:
-        """in human order"""
+        """in NOhuman order"""
         return "".join(map(str, self.list()))
 
     def __getitem__(self, idx: int) -> Union[int, NoReturn]:
         if idx < -self.field_size or idx > self.field_size - 1:
             raise Exx_BitsOutOfRange
-        return self._field_data[idx // 8] >> (idx % 8) & 1
+        return self._field_bytearray[idx // 8] >> (idx % 8) & 1
 
     def __setitem__(self, idx: int, value: Union[int, bool, Any]) -> Optional[NoReturn]:
         mask = 1 << (idx % 8)
         if bool(value):
-            self._field_data[idx // 8] |= mask
+            self._field_bytearray[idx // 8] |= mask
         else:
-            self._field_data[idx // 8] &= ~mask
+            self._field_bytearray[idx // 8] &= ~mask
 
     def __len__(self) -> int:
         return self.field_size
@@ -74,7 +87,7 @@ class Bitfield:
         """
         print(int(bytearray(2).hex(), 16))
         """
-        return int(self._field_data.hex(), 16)
+        return int(self._field_bytearray.hex(), 16)
 
     def _bin_str(self) -> str:
         """common bin-format (without type prefix)
@@ -89,35 +102,7 @@ class Bitfield:
         """common hex(full bytes)-format (without type prefix)
         print(bytearray(2).hex())
         """
-        return self._field_data.hex()
-
-    def __zero_try_bytearray(self):
-        print(bytearray(1))
-        print(bytearray(2))
-
-        print(bin())
-        print(bytearray(2).hex())
-
-        print(int(bytearray(1).hex(), 16))
-        print(int(bytearray(2).hex(), 16))
-        """
-        bytearray(b'\x00')
-        bytearray(b'\x00\x00')
-        00
-        0000
-        0
-        0
-        """
-        # print(bytearray())
-        # print(bytearray(0))
-        # print(bytearray(1))
-        # print(bytearray(2))
-        # """
-        # bytearray(b'')
-        # bytearray(b'')
-        # bytearray(b'\x00')
-        # bytearray(b'\x00\x00')
-        # """
+        return self._field_bytearray.hex()
 
 
 # =====================================================================================================================

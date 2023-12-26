@@ -39,7 +39,7 @@ class Test__Bitfield:
         victim: Bitfield = self.VICTIM(1)
         assert victim.field_size == 1
         assert len(victim) == 1
-        assert victim._field_data == bytearray(1)
+        assert victim._field_bytearray == bytearray(1)
 
         # [0] -------------------------------------------
         victim[0] = 0
@@ -53,6 +53,7 @@ class Test__Bitfield:
         assert victim._hex_str() == "00"
         assert victim.list() == [0, ]
         assert str(victim) == "field[0]"
+        assert victim.size_get_active() == 0
 
         # [1] -------------------------------------------
         victim[0] = 1
@@ -66,12 +67,13 @@ class Test__Bitfield:
         assert victim._hex_str() == "01"
         assert victim.list() == [1, ]
         assert str(victim) == "field[1]"
+        assert victim.size_get_active() == 1
 
     def test__2(self):
         victim: Bitfield = self.VICTIM(2)
         assert victim.field_size == 2
         assert len(victim) == 2
-        assert victim._field_data == bytearray(1)
+        assert victim._field_bytearray == bytearray(1)
 
         # [00] -------------------------------------------
         victim[0] = 0
@@ -86,6 +88,7 @@ class Test__Bitfield:
         assert victim._hex_str() == "00"
         assert victim.list() == [0, 0, ]
         assert str(victim) == "field[00]"
+        assert victim.size_get_active() == 0
 
         # [01] -------------------------------------------
         victim[0] = 1
@@ -100,6 +103,7 @@ class Test__Bitfield:
         assert victim._hex_str() == "01"
         assert victim.list() == [0, 1, ]
         assert str(victim) == "field[01]"
+        assert victim.size_get_active() == 1
 
         # [10] -------------------------------------------
         victim[0] = 0
@@ -115,6 +119,7 @@ class Test__Bitfield:
         assert victim._hex_str() == "02"
         assert victim.list() == [1, 0, ]
         assert str(victim) == "field[10]"
+        assert victim.size_get_active() == 2
 
     def test__index(self):
         pass
