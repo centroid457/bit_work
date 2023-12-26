@@ -12,13 +12,13 @@ class PROJECT:
     NAME_INSTALL: str = "bit-work"
     NAME_IMPORT: str = "bit_work"
     KEYWORDS: List[str] = [
-        "bitfields",
+        "_field_data",
         "flags", "flags manipulate",
         "bits", "bit user", "bit work", "bits manipulate",
     ]
 
-    DESCRIPTION_SHORT: str = "work with bits (bitfields/flags/...)"
-    DESCRIPTION_LONG: str = "designed for common work with bitfield-like objects"
+    DESCRIPTION_SHORT: str = "work with bits (_field_data/flags/...)"
+    DESCRIPTION_LONG: str = "designed for common work with _field_data-like objects"
     FEATURES: List[str] = [
         "Flags",
         "Bits",
