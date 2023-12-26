@@ -36,7 +36,15 @@ class Bitfield:
 
     @classmethod
     def create_from_int(cls, flags: int, field_size: Optional[int] = None) -> 'Bitfield':
-        pass
+        raise NotImplemented
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
+    # todo: FINISH!
 
     def size_get_active(self) -> int:
         """get position of major valued flag
