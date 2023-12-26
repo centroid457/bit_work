@@ -9,19 +9,21 @@ class PROJECT:
     AUTHOR_HOMEPAGE: str = "https://github.com/centroid457/"
 
     # ------------------------------------------------------
-    NAME_INSTALL: str = "prj-name"
-    NAME_IMPORT: str = "prj_name"
+    NAME_INSTALL: str = "bit-work"
+    NAME_IMPORT: str = "bit_work"
     KEYWORDS: List[str] = [
-        "kw1",
+        "bitfields",
+        "flags", "flags manipulate",
+        "bits", "bit user", "bit work", "bits manipulate",
     ]
 
-    DESCRIPTION_SHORT: str = "descr short (git/prg descr)"
-    DESCRIPTION_LONG: str = "designed for ..."
+    DESCRIPTION_SHORT: str = "work with bits (bitfields/flags/...)"
+    DESCRIPTION_LONG: str = "designed for common work with bitfield-like objects"
     FEATURES: List[str] = [
-        "feat1",
-        "feat2",
-        ["feat3", "block1", "block2"],
-        "feat4",
+        "Flags",
+        "Bits",
+        # ["feat3", "block1", "block2"],
+        # "feat4",
     ]
     WISHES: List[str] = [
         "add ..."

@@ -41,7 +41,7 @@ See tests and sourcecode for other examples.
 ### 1. example1.py
 
 ```python
-from bit_user import *
+from bit_work import *
 
 # =====================================================================================================================
 if __name__ == "__main__":

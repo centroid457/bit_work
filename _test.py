@@ -6,12 +6,12 @@ from tempfile import TemporaryDirectory
 from typing import *
 from configparser import ConfigParser
 
-from bit_user import *
+from bit_work import *
 
 
 # =====================================================================================================================
-class Test__888888888888:
-    VICTIM: Type[NEW_CLASS____] = type("VICTIM", (NEW_CLASS____,), {})
+class Test__Flags:
+    VICTIM: Type[Flags] = type("VICTIM", (Flags,), {})
 
     @classmethod
     def setup_class(cls):
@@ -22,7 +22,7 @@ class Test__888888888888:
         pass
 
     def setup_method(self, method):
-        self.VICTIM = type("VICTIM", (NEW_CLASS____,), {})
+        self.VICTIM = type("VICTIM", (Flags,), {})
 
     # -----------------------------------------------------------------------------------------------------------------
     def test__ClassMethod_and_obj(self):
