@@ -51,7 +51,7 @@ class Test__Bitfield:
         assert victim.field_str == "0"
         assert victim._bin_str() == "0"
         assert victim._hex_str() == "00"
-        assert victim.list() == [0, ]
+        assert victim.list_bits() == [0, ]
         assert str(victim) == "field[0]"
         assert victim.size_get_active() == 0
 
@@ -65,7 +65,7 @@ class Test__Bitfield:
         assert victim.field_str == "1"
         assert victim._bin_str() == "1"
         assert victim._hex_str() == "01"
-        assert victim.list() == [1, ]
+        assert victim.list_bits() == [1, ]
         assert str(victim) == "field[1]"
         assert victim.size_get_active() == 1
 
@@ -86,7 +86,7 @@ class Test__Bitfield:
         assert victim.field_str == "00"
         assert victim._bin_str() == "00"
         assert victim._hex_str() == "00"
-        assert victim.list() == [0, 0, ]
+        assert victim.list_bits() == [0, 0, ]
         assert str(victim) == "field[00]"
         assert victim.size_get_active() == 0
 
@@ -101,7 +101,7 @@ class Test__Bitfield:
         assert victim.field_str == "01"
         assert victim._bin_str() == "01"
         assert victim._hex_str() == "01"
-        assert victim.list() == [0, 1, ]
+        assert victim.list_bits() == [0, 1, ]
         assert str(victim) == "field[01]"
         assert victim.size_get_active() == 1
 
@@ -117,7 +117,7 @@ class Test__Bitfield:
         assert victim.field_str == "10"
         assert victim._bin_str() == "10"
         assert victim._hex_str() == "02"
-        assert victim.list() == [1, 0, ]
+        assert victim.list_bits() == [1, 0, ]
         assert str(victim) == "field[10]"
         assert victim.size_get_active() == 2
 

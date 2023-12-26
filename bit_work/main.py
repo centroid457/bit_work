@@ -50,7 +50,7 @@ class Bitfield:
         """get position of major valued flag
         """
         result = 0
-        for pos, value in enumerate(self.list()[::-1], start=1):
+        for pos, value in enumerate(self.list_bits()[::-1], start=1):
             if value == 1:
                 result = pos
         return result
@@ -58,7 +58,7 @@ class Bitfield:
     @property
     def field_str(self) -> str:
         """in NOhuman order"""
-        return "".join(map(str, self.list()))
+        return "".join(map(str, self.list_bits()))
 
     def __getitem__(self, idx: int) -> Union[int, NoReturn]:
         if idx < -self.field_size or idx > self.field_size - 1:
@@ -79,7 +79,7 @@ class Bitfield:
         return bin(self.int()).count('1')
 
     # REPRESENTATIONS ---------------------------------------------------------------
-    def list(self) -> List[int]:
+    def list_bits(self) -> List[int]:
         """in NOhuman order
         """
         result = []
@@ -87,6 +87,15 @@ class Bitfield:
             result.append(self[index])
         result.reverse()
         return result
+
+    def list_flags(self) -> List[int]:
+        """Return set flags in field!
+        in human order (but order is not important!)
+
+        in case of [101] -> [1, 4, ]
+        """
+        result = []
+        for
 
     def __str__(self) -> str:
         return f"field[{self.field_str}]"
