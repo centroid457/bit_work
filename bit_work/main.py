@@ -2,7 +2,7 @@ from typing import *
 
 
 # =====================================================================================================================
-# TODO: need decision about flags order!!!
+# TODO: need decision about flags order!!! NEED HUMAN ALWAYS except hex!!!
 
 
 # =====================================================================================================================
@@ -18,7 +18,7 @@ class Exx_BitsOutOfRange(Exception):
 class Bitfield:
     """
     IMPORTANT: ORDER for any field is NO HUMAN!!! or not???
-    YOU NEED TO SEE ALWAYS AS REVERCE IN ANY REPRESENTATION!!!
+    YOU NEED TO SEE ALWAYS AS REVERSE IN ANY REPRESENTATION!!!
     but when you indexind by obj[] used human order!!!
     """
     field_size: int = None
@@ -75,10 +75,10 @@ class Bitfield:
     def __len__(self) -> int:
         return self.field_size
 
-    def count_ones(self) -> int:
+    def count_activated(self) -> int:
         return bin(self.int()).count('1')
 
-    # REPRESENTATIONS ---------------------------------------------------------------
+    # LISTS ---------------------------------------------------------------------------
     def list_bits(self) -> List[int]:
         """in NOhuman order
         """
@@ -88,16 +88,35 @@ class Bitfield:
         result.reverse()
         return result
 
-    def list_flags(self) -> List[int]:
-        """Return set flags in field!
+    def list_activated_indexes(self) -> List[int]:
+        """Return activated flag indexes in field!
+        in human order (but order is not important!)
+
+        in case of [101] -> [0, 2, ]
+        """
+        result = []
+        for index in range(self.field_size):
+            if self[index]:
+                result.append(index)
+        return result
+
+    def list_activated_values(self) -> List[int]:
+        """Return activated flag indexes in field!
         in human order (but order is not important!)
 
         in case of [101] -> [1, 4, ]
         """
         result = []
-        for
+        for index in range(self.field_size):
+            if self[index]:
+                result.append(1 << index)
+        return result
 
+    # REPRESENTATIONS ---------------------------------------------------------------
     def __str__(self) -> str:
+        return f"field[{self.field_str}]"
+
+    def __repr__(self) -> str:
         return f"field[{self.field_str}]"
 
     def int(self) -> int:
