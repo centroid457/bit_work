@@ -1,6 +1,10 @@
-# bit_work
-Work with bits (bitfields/flags/...).  
-Designed for common work with bitfield-like objects.  
+# bit_work (v0.0.0)
+
+## DESCRIPTION_SHORT
+Work with bits (bitfields/flags/bites...)
+
+## DESCRIPTION_LONG
+designed for common work with bitfields-like objects
 
 
 ## Features
@@ -33,7 +37,7 @@ from bit_work import *
 ## USAGE EXAMPLES
 See tests and sourcecode for other examples.
 
-******************************
+------------------------------
 ### 1. example1.py
 ```python
 from bit_work import *
@@ -41,12 +45,10 @@ from bit_work import *
 
 # =====================================================================================================================
 if __name__ == "__main__":
-    Flags()
+    pass
 
 
 # =====================================================================================================================
-
-print(Flags())
 ```
 
 ********************************************************************************
