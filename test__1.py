@@ -7,7 +7,6 @@ from typing import *
 from configparser import ConfigParser
 
 from object_info import *
-
 from bit_work import *
 
 
