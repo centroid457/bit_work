@@ -28,8 +28,9 @@ pip install bit-work
 
 
 ## Import
+
 ```python
-from bit_work import *
+from bit_aux import *
 ```
 
 
@@ -39,14 +40,13 @@ See tests and sourcecode for other examples.
 
 ------------------------------
 ### 1. example1.py
-```python
-from bit_work import *
 
+```python
+from bit_aux import *
 
 # =====================================================================================================================
 if __name__ == "__main__":
     pass
-
 
 # =====================================================================================================================
 ```

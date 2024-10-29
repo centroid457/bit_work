@@ -14,7 +14,7 @@ class PROJECT:
     AUTHOR_HOMEPAGE: str = "https://github.com/centroid457/"
 
     # PROJECT ----------------------------------------------
-    NAME_IMPORT: str = "bit_work"
+    NAME_IMPORT: str = "bit_aux"
     KEYWORDS: List[str] = [
         "_field_bytearray",
         "flags", "flags manipulate",
@@ -35,8 +35,6 @@ class PROJECT:
         # "feat1",
         # ["feat2", "block1", "block2"],
 
-        "Flags",
-        "Bits",
     ]
 
     # HISTORY -----------------------------------------------
